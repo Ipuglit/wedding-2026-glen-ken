@@ -33,7 +33,7 @@ export const Page_ImageHeader = ({
                 display: 'flex', 
                 justifyContent: 'center', 
                 alignItems: 'center',
-                mb:  -5,
+                mb:  is_mobile ? 0 : -5,
                 pt: is_mobile ? 0 : 2
             }}
         >
