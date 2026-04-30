@@ -86,21 +86,12 @@ export const Page_ImageHeader = ({
                     }}
                 >
                     <Stack spacing={1.5} alignItems="center" sx={{ width: '100%', mb: -10 }}>
-                        <Box 
-                            sx={{ 
-                                width: 80, 
-                                height: 2, 
-                                bgcolor: pinkAccent,
-                                mb: 1,
-                                boxShadow: `0 0 12px ${pinkAccent}`
-                            }} 
-                        />
-                        
+
                         <Typography 
                             sx={{ 
                                 color: "#C2185B", 
                                 fontWeight: 400, 
-                                fontSize: is_mobile ? '2.8rem' : '5rem',
+                                fontSize: is_mobile ? 30 : 65,
                                 fontFamily: "'Playfair Display', serif",
                                 lineHeight: 1.1,
                                 textAlign: 'center'
@@ -118,6 +109,7 @@ export const Page_ImageHeader = ({
                                     letterSpacing: is_mobile ? 3 : 6,
                                     textTransform: 'uppercase',
                                     opacity: 0.8,
+                                    fontSize: 11,
                                     textAlign: 'center'
                                 }}
                             >
@@ -128,7 +120,7 @@ export const Page_ImageHeader = ({
                                 sx={{ 
                                     color: pinkAccent, 
                                     fontWeight: 600, 
-                                    fontSize: '0.9rem',
+                                    fontSize: 11,
                                     letterSpacing: 2,
                                     textTransform: 'uppercase',
                                     display: 'flex',
