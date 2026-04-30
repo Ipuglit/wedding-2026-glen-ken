@@ -157,7 +157,7 @@ export const Page_ImageUploading = ({ onUploadComplete }) => {
     };
 
     return (
-        <Box sx={{ width: '100%', minHeight: '80vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <Box sx={{ width: '100%', minHeight: '80vh', display: 'flex', justifyContent: 'center', alignItems: 'center', mt: files.length > 0 ? 10 : 1 }}>
             <Card 
                 shape="rounded" 
                 sx={{ 
@@ -219,7 +219,7 @@ export const Page_ImageUploading = ({ onUploadComplete }) => {
                                     display: 'block'
                                 }}
                             >
-                                "Send us the beautiful moments you captured from our wedding celebration together."
+                                Send us the beautiful moments you captured from our wedding celebration together.
                             </Typography>
                             <Box 
                                 sx={{ 
@@ -233,35 +233,7 @@ export const Page_ImageUploading = ({ onUploadComplete }) => {
                         </Stack>
                     </Box>
 
-                    <Box 
-                        onClick={() => !loading && inputRef.current?.click()}
-                        sx={{
-                            width: '100%',
-                            border: `2px dashed ${pinkAccent}4D`,
-                            borderRadius: SHAPES.rounded,
-                            py: is_mobile ? 6 : 8,
-                            bgcolor: softPinkBg,
-                            cursor: loading ? 'default' : 'pointer',
-                            transition: 'all 0.4s ease',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            '&:hover': {
-                                bgcolor: '#FFEBF0',
-                                borderColor: pinkAccent,
-                                transform: loading ? 'none' : 'translateY(-2px)'
-                            }
-                        }}
-                    >
-                        <input ref={inputRef} type="file" multiple hidden accept="image/*" onChange={handleFileChange} />
-                        <Stack alignItems="center" spacing={2}>
-                            <Box sx={{ fontSize: 40 }}>📸</Box>
-                            <Typography sx={{ fontWeight: 800, color: deepPink, letterSpacing: 1, textAlign: 'center' }}>
-                                {files.length > 0 ? 'ADD MORE PHOTOS' : 'UPLOAD PHOTOS'}
-                            </Typography>
-                        </Stack>
-                    </Box>
+
 
                     {files.length > 0 && (
                         <Box sx={{ width: '100%' }}>
@@ -319,6 +291,36 @@ export const Page_ImageUploading = ({ onUploadComplete }) => {
                         </Box>
                     )}
 
+                    <Box 
+                        onClick={() => !loading && inputRef.current?.click()}
+                        sx={{
+                            width: '100%',
+                            border: `2px dashed ${pinkAccent}4D`,
+                            borderRadius: SHAPES.rounded,
+                            py: is_mobile ? 6 : files.length > 0 ? 2 : 8,
+                            bgcolor: softPinkBg,
+                            cursor: loading ? 'default' : 'pointer',
+                            transition: 'all 0.4s ease',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            '&:hover': {
+                                bgcolor: '#FFEBF0',
+                                borderColor: pinkAccent,
+                                transform: loading ? 'none' : 'translateY(-2px)'
+                            }
+                        }}
+                    >
+                        <input ref={inputRef} type="file" multiple hidden accept="image/*" onChange={handleFileChange} />
+                        <Stack alignItems="center" spacing={2}>
+                            <Box sx={{ fontSize: 40 }}>📸</Box>
+                            <Typography sx={{ fontWeight: 800, color: deepPink, letterSpacing: 1, textAlign: 'center' }}>
+                                {files.length > 0 ? 'ADD MORE PHOTOS' : 'UPLOAD PHOTOS'}
+                            </Typography>
+                        </Stack>
+                    </Box>
+
                     {loading && (
                         <Stack spacing={1.5} sx={{ width: '100%', alignItems: 'center' }}>
                             <Stack direction="row" justifyContent="space-between" sx={{ width: '100%' }}>
@@ -340,7 +342,7 @@ export const Page_ImageUploading = ({ onUploadComplete }) => {
 
                     <TextField
                         fullWidth
-                        placeholder="Your Name"
+                        placeholder="Please input your name to submit"
                         variant="outlined"
                         value={uploaderName}
                         onChange={handleNameChange}
@@ -375,7 +377,7 @@ export const Page_ImageUploading = ({ onUploadComplete }) => {
                             '&.Mui-disabled': { bgcolor: '#FCE4EC', color: pinkAccent }
                         }}
                     >
-                        {loading ? `UPLOADING ${progress}%` : `PUBLISH ${files.length} PHOTOS`}
+                        {loading ? `UPLOADING ${progress}%` : `SEND ${files.length} PHOTOS`}
                     </Button>
                 </Stack>
             </Card>
