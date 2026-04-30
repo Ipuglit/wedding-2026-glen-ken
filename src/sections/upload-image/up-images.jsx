@@ -157,7 +157,7 @@ export const Page_ImageUploading = ({ onUploadComplete }) => {
     };
 
     return (
-        <Box sx={{ width: '100%', minHeight: '80vh', display: 'flex', justifyContent: 'center', alignItems: 'center', mt: files.length > 0 ? 10 : 1 }}>
+        <Box sx={{ width: '100%', minHeight: '80vh', display: 'flex', justifyContent: 'center', alignItems: 'center', mt: is_mobile ? 10 : files.length > 0 ? 10 : 1 }}>
             <Card 
                 shape="rounded" 
                 sx={{ 

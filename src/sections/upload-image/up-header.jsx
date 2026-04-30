@@ -41,7 +41,7 @@ export const Page_ImageHeader = ({
                 shape="rounded"
                 sx={{ 
                     position: 'relative', 
-                    height: is_mobile ? 500 : 450, 
+                    height: is_mobile ? 500 : 500, 
                     width: '100%', 
                     overflow: 'hidden',
                     bgcolor: softPinkBg,
